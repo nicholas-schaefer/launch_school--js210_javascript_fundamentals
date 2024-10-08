@@ -1,0 +1,4 @@
+
+indexed
+lazyDog
+operand2
