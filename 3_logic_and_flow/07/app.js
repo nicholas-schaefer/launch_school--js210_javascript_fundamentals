@@ -1,6 +1,7 @@
-isPrime = function isThisNumberPrime(input) {
+const isPrime = function isThisNumberPrime(input) {
     if (input < 2) return false;
-    if (input % 2 === 0) return true;
+    if (input === 2) return true;
+    if (input % 2 === 0) return false;
     let maxToCheck = Math.floor(input / 2);
 
     for (i = 3; i <= maxToCheck; i+=2 ){
