@@ -1,4 +1,4 @@
-const charCode = {
+const charCodes = {
     'A': 65,
     'Z': 90,
     'a': 97,
@@ -13,11 +13,11 @@ function rotateCharOnce(startChar) {
     let notALetter;
 
     if (startChar.search(/[A-Z]/) === 0) {
-        lowerLimit = charCode.A;
-        upperLimit = charCode.Z;
+        lowerLimit = charCodes.A;
+        upperLimit = charCodes.Z;
     } else if (startChar.search(/[a-z]/) === 0) {
-        lowerLimit = charCode.a;
-        upperLimit = charCode.z;
+        lowerLimit = charCodes.a;
+        upperLimit = charCodes.z;
     } else{
         notALetter = true;
     }
@@ -39,10 +39,11 @@ function rotateCharOnce(startChar) {
 // Transforms letter characters while maintaining original case, 13 characters forward
 // Returns string of transformed characters
 function rot13(input) {
-    rotatedCharsArray = Array.from(input).map((char)=>{
+    const ITERATIONS_OFFSET = 13
+    let rotatedCharsArray = Array.from(input).map((char)=>{
         let rotateOnce = rotateCharOnce(char);
         let rotatedChar = '';
-        for (let i = 0; i < 13; i +=1){
+        for (let i = 0; i < ITERATIONS_OFFSET; i +=1){
             rotatedChar = rotateOnce();
         }
         return rotatedChar;
