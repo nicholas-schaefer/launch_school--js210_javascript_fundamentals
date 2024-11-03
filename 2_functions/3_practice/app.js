@@ -1,16 +1,9 @@
-function sum(...array_ints){
-    return array_ints.reduce(function(accumulator, currentValue){
-        return accumulator + currentValue
-    }, 0)
+function average(...nums){
+    const count = nums.length;
+    if (count === 0) return
+    return nums.reduce((sum, num) => sum + num, 0) / count;
 }
 
-function average(...array_ints){
-    let element_count = array_ints.length
-    let total = sum(...array_ints)
-    return total / element_count
-}
+const temperatures = [5, 8, 11, 15, 22];
 
-console.log(average(5,7,9));
-
-
-console.log(sum(5,7,9));
+console.log(average(...temperatures));
